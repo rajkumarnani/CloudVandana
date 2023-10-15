@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>  
+  <style>
+     body {
+      background: #BDBDBD;
+    }
+
+    #calcContainer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ffffff;
+      width: 60%;
+      height: auto;
+      box-shadow: 0.5em 0.5em 1.2em rgba(0, 0, 0, 0.2);
+    }
+
+    .result-clear {
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .result-clear input[type=text].result {
+      display: block;
+      border: 0;
+      padding-top: 1%;
+      padding-left: 5%;
+      width: 72%;
+      height: 60px;
+      font-size: 1.4em;
+    }
+
+    .grid-buttons {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #212121;
+    }
+
+    input[type=button] {
+      flex-grow: 1;
+      width: 25%;
+      height: auto;
+      padding: 4%;
+      border: 0;
+      align-items: center;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #ffffff;
+      background: #212121;
+      border: 2px solid #212121;
+    }
+
+    input[type=button].clear {
+      width: 25.5%;
+      font-size: 20px;
+      background: #0480ba;
+      border: 2px solid #0480ba;
+    }
+
+    .grid-buttons input[type=button].math {
+      background: #615f5f;
+      border: 2px solid  #615f5f;
+    }
+  </style>
+</head>
+<body>
+  <div id="calcContainer">
+    <form name="calculator">
+      <div class="result-clear">
+        <input type="text" class="result" name="answer" readonly />
+        <input type="button" class="clear" value=" AC " onclick="clearResult()" />
+      </div>
+      <div class="grid-buttons">
+        <input type="button" value="9" onclick="appendToResult('9')" />
+        <input type="button" value="8" onclick="appendToResult('8')" />
+        <input type="button" value="7" onclick="appendToResult('7')" />
+        <input type="button" value="+" onclick="appendToResult('+')" class="math" />
+        <br />
+        <input type="button" value="4" onclick="appendToResult('4')" />
+        <input type="button" value="5" onclick="appendToResult('5')" />
+        <input type="button" value="6" onclick="appendToResult('6')" />
+        <input type="button" value="−" onclick="appendToResult('-')" class="math" />
+        <br />
+        <input type="button" value="1" onclick="appendToResult('1')" />
+        <input type="button" value="2" onclick="appendToResult('2')" />
+        <input type="button" value="3" onclick="appendToResult('3')" />
+        <input type="button" value="÷" onclick="appendToResult('/')" class="math" />
+        <br />
+        <input type="button" value="." onclick="appendToResult('.')" />
+        <input type="button" value="0" onclick="appendToResult('0')" />
+        <input type="button" value="=" onclick="calculateResult()" />
+        <input type="button" value="×" onclick="appendToResult('*')" class="math" />
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function clearResult() {
+      calculator.answer.value = '';
+    }
+
+    function appendToResult(value) {
+      calculator.answer.value += value;
+    }
+
+    function calculateResult() {
+      try {
+        calculator.answer.value = eval(calculator.answer.value);
+      } catch (error) {
+        calculator.answer.value = 'Invalid Calculation Format';
+      }
+    }
+  </script>
+</body>
+</html>

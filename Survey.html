@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Survey Form</title>
+    <style>
+        body {
+            background-color: rgb(13, 133, 184);
+            color: white;
+        }
+
+        form {
+            background-color: white;
+            color: black;
+            margin: 0 auto;
+            width: 60%; 
+            padding: 20px;
+            margin-top: 20px; 
+            border-radius: 10px; 
+            box-shadow: 5px 5px 20px rgba(32, 2, 141, 0.5); 
+        }
+
+        a {
+            color: white;
+        }
+
+        input {
+            padding: 10px 70px 10px 10px;
+        }
+        
+        p {
+            padding: 20px 0px;
+            text-align: center;
+            font-size: 24px; 
+        }
+        h1 {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        input[type=submit] {
+            background-color: rgb(13, 133, 184);
+            padding: 10px 20px; 
+            color: aliceblue;
+            border: 2px solid rgb(13, 133, 184);
+            font-size: 18px; 
+        }
+
+
+        .bold-label {
+            font-weight: bold;
+            color: black;
+            font-size: 18px;
+            padding: 5px 0; 
+        }
+
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 20px;
+        }
+
+        .input-group {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        textarea {
+            font-size: 16px; 
+            padding: 10px;
+            width: 70%; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer Survey Form</h1>
+    <form>
+        <div class="side-by-side">
+            <div class="input-group">
+                <label for="name" class="bold-label">Name</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email" class="bold-label">Email</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+        
+        <label for="first-time" class="bold-label">Is this your first time using our products & service?</label><br>
+        <input type="radio" id="first-time-yes" name="first-time" value="Yes" required checked> <!-- Set the first radio button as default selected -->
+        <label for="first-time-yes">Yes</label>
+        <input type="radio" id="first-time-no" name="first-time" value="No">
+        <label for="first-time-no">No</label><br><br>
+
+        <label for="recommendation" class="bold-label">Would you recommend us to your friends and colleagues?</label><br>
+        <input type="radio" id="recommendation-yes" name="recommendation" value="Yes" required checked>
+        <label for="recommendation-yes">Yes</label>
+        <input type="radio" id="recommendation-no" name="recommendation" value="No">
+        <label for="recommendation-no">No</label><br><br>
+
+        <label class="bold-label">How satisfied are you with our company overall?</label><br>
+        <input type="radio" id="satisfaction-satisfied" name="satisfaction" value="Satisfied" required checked>
+        <label for="satisfaction-satisfied">Satisfied</label>
+        <input type="radio" id="satisfaction-undecided" name="satisfaction" value="Undecided">
+        <label for="satisfaction-undecided">Undecided</label>
+        <input type="radio" id="satisfaction-unsatisfied" name="satisfaction" value="Unsatisfied">
+        <label for="satisfaction-unsatisfied">Unsatisfied</label><br><br>
+
+        <label for="suggestions" class="bold-label">Do you have any suggestions to improve our service?</label><br>
+        <textarea id="suggestions" name="suggestions" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="SUBMIT" onclick="window.location.href = 'https://rajkumarnani.github.io/portfolio'"><br><br>
+    </form>
+    
+    <p>&copy; 2023 Customer Survey Form. All Rights Reserved | Design by <a href="https://rajkumarnani.github.io/portfolio">Rajkumar</a></p>
+</body>
+</html>
